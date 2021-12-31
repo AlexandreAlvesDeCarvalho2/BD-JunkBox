@@ -1,0 +1,57 @@
+CREATE TABLE T_MUSICA(
+ID_MUSICA NUMBER GENERATED ALWAYS AS IDENTITY Primary key,
+NM_MUSICA varchar(60) not null,
+NM_ARTISTA varchar(60) not null);
+
+CREATE TABLE T_PLAYLIST(
+ID_PLAYLIST NUMBER GENERATED ALWAYS AS IDENTITY Primary key,
+ID_MUSICA int not null,
+CONSTRAINT T_PLAYLIST FOREIGN KEY(ID_MUSICA) REFERENCES T_MUSICA(ID_MUSICA));
+
+Create view vm_playlist2 as
+SELECT ID_MUSICA,ID_PLAYLIST,NM_MUSICA, NM_ARTISTA FROM T_PLAYLIST JOIN T_MUSICA
+USING (ID_MUSICA) ORDER BY t_playlist.id_playlist;
+
+
+REM INSERTING into EXPORT_TABLE
+SET DEFINE OFF;
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('1','Passinho Debochado','João Gomes');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('2','Ameaça','Paulo PiresAmeaça');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('3','Metade de um Abraço','Zé Vaqueiro');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('4','Gordinho Jeitoso','Neul Matarazzo');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('5','Meu Pedaço de Pecado','João Gomeso');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('6','Carinha de Neném','JapãozinCarinha de Neném');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('7','Passinho Debochado','Dan Ventura');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('8','Aquelas Coisas','João Gomes');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('9','Cena de Amor','Brisa Star');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('10','Na Estrada da Vida','Bregão do Caster');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('11','Viela','Marcynho Sensação');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('12','Se Sobrar Eu Vendo - Ao Vivo','Filipe Labre');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('13','Volta Comigo BB','Zé Vaqueiro');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('14','Disco Arranhado','César Menotti & Fabiano');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('15','Batom de Cereja - Ao Vivo','Israel & Rodolffo');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('16','Hit do Ano','Jorge & Mateus');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('17','Disco Arranhado','César Menotti & Fabiano');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('18','Batom de Cereja','Israel & Rodolffo');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('19','Hit do Ano','Jorge & Mateus');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('20','Zero Saudade','Os Barões Da Pisadinha');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('21','Se For Amor','João Gomes');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('22','Quero Ver é Me Esquecer','Os Barões Da Pisadinha');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('23','Só de Sacanagem - Ao Vivo','Os Barões Da Pisadinha');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('24','Vou falar que não quero','Vitor Fernandes');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('25','- Paradigmas','Jorge & Mateus');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('26','Passatempo','Wesley Safadão');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('27','Eu Tenho a Senha','João Gomes');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('28',' Ela e Ela','Zé Neto & Cristiano');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('29','Desbloqueado - Ao Vivo','Diego & Victor Hugo');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('30','Vagabundo','Matheus & Kauan');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('31','Pingo de Dó','Hugo & Guilherme');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('32','Alô Ex-Amor','Taty pink');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('33','Alô Ex-Amor','João Bosco e Gabriel');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('34','Só Tem Eu','Zé Felipe');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('35','Barzinho Aleatório','Zé Neto & Cristiano');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('36','Tchau Tchau','Matheus & Kauan');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('37','Sem Sentimento','Neul Matarazzo');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('38','Namora Eu Aí','Jorge & Mateus');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('39','Ele Não Te Merece','Wesley Safadão');
+Insert into EXPORT_TABLE (ID_MUSICA,NM_MUSICA,NM_ARTISTA) values ('40','Joguei a Minha Aliança Fora','Neul Matarazzo');
